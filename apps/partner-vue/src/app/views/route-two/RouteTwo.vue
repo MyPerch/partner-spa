@@ -10,9 +10,11 @@ onMounted(() => {
     modalInstance = new Modal(modalEl);
 
     modalEl.addEventListener('shown.bs.modal', () => {
-      window.dispatchEvent(new CustomEvent('perch-widget:init'));
+      window.dispatchEvent(new CustomEvent('perch-widget:init', { detail: { perchWidgetId: 'xxDu9Zga' } }));
     });
   }
+
+  window.dispatchEvent(new Event('perch-widget:init'));
 });
 
 const openModal = () => {
@@ -53,6 +55,11 @@ function closeModal() {
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="perch-widget" widget-id="7iQkHzyj">
+    <!-- Replace the inner content with custom loader -->
+    <div class="perch-widget-loading-indicator" style="text-align: center;">Loading...</div>
   </div>
 
   <button type="button" class="btn btn-lg btn-primary" @click="openModal">Launch widget</button>

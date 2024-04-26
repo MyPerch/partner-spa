@@ -1,4 +1,4 @@
-import { Component, TemplateRef, inject } from '@angular/core';
+import { Component, OnInit, TemplateRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   NgbModal,
@@ -11,15 +11,20 @@ import {
   imports: [CommonModule, NgbModalModule],
   templateUrl: './route-two.component.html',
 })
-export class RouteTwoComponent {
+export class RouteTwoComponent  implements OnInit {
   private modalService = inject(NgbModal);
-  closeResult = '';
+
+  ngOnInit(): void {
+    window.dispatchEvent(new Event('perch-widget:init'));
+  }
+
+
 
   open(content: TemplateRef<unknown>) {
     const modalR = this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' })
 
     modalR.shown.subscribe(() => {
-      window.dispatchEvent(new CustomEvent('perch-widget:init'));
+      window.dispatchEvent(new CustomEvent('perch-widget:init', { detail: { perchWidgetId: 'xxDu9Zga' } }));
     });
   }
 }
