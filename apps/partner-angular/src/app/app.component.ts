@@ -7,7 +7,6 @@ import { NxWelcomeComponent } from './nx-welcome.component';
   imports: [NxWelcomeComponent, RouterModule],
   selector: 'pa-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'partner-angular';
