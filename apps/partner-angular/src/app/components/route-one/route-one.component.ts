@@ -10,6 +10,6 @@ import { Component, OnInit } from '@angular/core';
 export class RouteOneComponent implements OnInit {
 
   ngOnInit(): void {
-    window.dispatchEvent(new CustomEvent('perch-widget:initialized'));
+    window.dispatchEvent(new CustomEvent('perch-widget:init'));
   }
 }
